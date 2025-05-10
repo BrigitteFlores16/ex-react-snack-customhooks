@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 function useSwitch(initialState = false) {
-  const [value, setValue] = useState(initialState);
+  const [state, setState] = useState(initialState);
 
-  const toggle = () => {
-    setValue((prev) => !prev);
-  };
+  function toggle() {
+    setState((prevState) => !prevState);
+  }
 
-  return [value, toggle];
+  return [state, toggle];
 }
 
 export default useSwitch;
