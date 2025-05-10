@@ -1,12 +1,19 @@
-import { useState } from "react";
+import useSwitch from "./useSwitch";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [isOn, toggle] = useSwitch();
 
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6 text-center">
+          <h1 className="mb-4">Il valore è: {isOn ? "TRUE" : "FALSE"}</h1>
+          <button onClick={toggle} className="btn btn-primary">
+            Cambia Stato
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
